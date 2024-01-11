@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.cardview.CircularRevealCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="15dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:strokeWidth="1dp"
+    android:id="@+id/card_view"
+    app:strokeColor="@color/purple_light"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+         >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+           android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+
+            android:id="@+id/image_card"
+            >
+        <androidx.appcompat.widget.AppCompatImageView
+           android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+
+            android:id="@+id/iv_news"
+
+            />
+        </androidx.cardview.widget.CardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="4dp"
+            app:strokeColor="@color/purple_light"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/image_card"
+                app:layout_constraintBottom_toTopOf="@id/auth_date"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="8dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:id="@+id/author_name"
+                android:text="Author"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/author_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="8dp"
+            android:id="@+id/auth_date"
+
+
+            android:layout_marginTop="12dp"
+            android:text="Date"
+            />
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/right_constraint"
+
+            >
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/news_title"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintBottom_toTopOf="@id/news_descp"
+            android:text="Title"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/news_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:id="@+id/news_descp"
+            android:layout_weight="3"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp"
+            android:text="Description"
+            />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                app:icon="@drawable/bookmark"
+                style="?attr/materialIconButtonFilledTonalStyle"
+              android:shadowColor="@color/purple_light"
+                app:iconSize="16dp"
+                android:id="@+id/bookmark_btn"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.circularreveal.cardview.CircularRevealCardView>
