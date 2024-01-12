@@ -93,11 +93,10 @@ class NewsViewModel @Inject constructor(
 
             withContext(Dispatchers.IO) {
                 checkBookmark = newsRepository.isBookmarked(articleUrl)
-                println(checkBookmark.toString() + "check bookmark deger fonk ici ")
+
             }
         }
 
-        println(checkBookmark.toString() + "check bookmark deger ")
         return checkBookmark
     }
 }

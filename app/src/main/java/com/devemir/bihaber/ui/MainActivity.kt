@@ -3,6 +3,7 @@ package com.devemir.bihaber.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -44,5 +45,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        navController.addOnDestinationChangedListener(){_,destination,_ ->
+            when(destination.id){
+                R.id.webViewFragment -> {
+                    binding.bottomNavigation.visibility= View.GONE
+                }
+                else -> {
+                    binding.bottomNavigation.visibility=View.VISIBLE
+                }
+            }
+        }
     }
+
 }

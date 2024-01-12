@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class WebViewFragment : Fragment() {
     private lateinit var binding: FragmentWebViewBinding
-    private val args: com.devemir.bihaber.ui.new_detail.WebViewFragmentArgs by navArgs()
+    private val args: WebViewFragmentArgs by navArgs()
     private var url: String? = null
     private val viewModel: NewsDetailViewModel by viewModels()
 
@@ -32,7 +32,7 @@ class WebViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         url?.let {
-            binding.webView.settings.javaScriptEnabled = true
+
             setAppBar()
             setTopAppBarClickListeners()
             bindNewDetail()
@@ -104,7 +104,7 @@ class WebViewFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentWebViewBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
         return binding.root
